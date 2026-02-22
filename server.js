@@ -14,6 +14,9 @@ app.use(cors({
   origin: "*"
 }));
 
+app.get("/", (req, res) => {
+  res.send("Home Page Server");
+})
 
 
 app.use(express.json());
