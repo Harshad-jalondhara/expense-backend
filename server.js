@@ -6,7 +6,17 @@ import authRoutes from "./routes/authRoutes.js";
 import expenseRoutes from "./routes/expenseRoutes.js";
 
 dotenv.config();
-ConnectDB();
+
+const start = async () => {
+  try {
+    await ConnectDB();
+    console.log("DB Connected");
+  } catch (error) {
+    console.error(error);
+  }
+};
+
+start();
 
 const app = express();
 
